@@ -3,9 +3,11 @@ from PyPDF2 import PdfFileMerger
 def join_pdfs(pdfs, dest_name):
     merger = PdfFileMerger()
     for pdf in pdfs:
+        print(f"INFO: merge {pdf}...")
         merger.append(pdf)
 
     output = open(dest_name, "wb")
+    print(f"Writting info to file {dest_name}. (may take a while) ... ")
     merger.write(output)    
 
 def check_and_build(pdfs, dest_name):

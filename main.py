@@ -1,7 +1,7 @@
 from ui import get_folder_name, get_thick_pdf_name, banner, get_source_pdfs
 from merger import check_and_build as join_pdfs
 
-VERSION = "0.1"
+VERSION = "0.2"
 
 banner(VERSION)
 folder = get_folder_name()
