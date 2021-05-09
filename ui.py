@@ -53,6 +53,21 @@ def get_folder_name():
       
   return folder_name
 
+def ask_for_all_in_folder(folder):
+    all_items = os.listdir(folder)
+    pdf_items = [os.path.join(folder, f) for f in all_items if ".pdf" in f]
+    pdf_count = len(pdf_items)
+    print(f"Found {pdf_count} PDF in this folder")
+    print("PDF list (see order, it will merge like this)")
+    for index, pdf in enumerate(pdf_items):
+        print(f"{index}.   {pdf}")
+
+    confirmation = "none"
+    while not confirmation in ["yes","no","Yes","No","YES","NO"]:
+        confirmation = input("Do we apply for all files? (yes/no)")
+
+    return confirmation, pdf_items
+
     
 
 def banner(v):
